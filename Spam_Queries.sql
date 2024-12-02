@@ -17,10 +17,9 @@ GROUP BY
 HAVING 
     -- threshold for number of users followed
     COUNT(c.followed_id) > 1
-    -- threshold for followed/day
-    AND COUNT(c.followed_id) / (DATEDIFF(MAX(c.timestamp), MIN(c.timestamp)) + 1) > 1
 ORDER BY 
-    total_followed DESC, avg_follows_per_day DESC, following_duration_days ASC;
+    total_followed DESC, avg_follows_per_day DESC, following_duration_days ASC
+LIMIT 15;
 
 -- Mass Posting --
 SELECT 
@@ -41,10 +40,9 @@ GROUP BY
 HAVING 
     -- threshold for number of posts
     COUNT(p.post_id) > 1
-    -- threshold for posts/day
-    AND COUNT(p.post_id) / (DATEDIFF(MAX(p.timestamp), MIN(p.timestamp)) + 1) > 1
 ORDER BY 
-    total_posts DESC, avg_posts_per_day DESC, posting_duration_days ASC;
+    total_posts DESC, avg_posts_per_day DESC, posting_duration_days ASC
+LIMIT 15;
 
 -- Repetitive Messages to Many Accounts --
 SELECT 
@@ -76,7 +74,6 @@ SELECT
     c.text AS comment_text,
     COUNT(DISTINCT c.post_id) AS unique_posts_commented_on,
     COUNT(c.comment_id) AS total_comments_made,
-    GROUP_CONCAT(DISTINCT c.post_id ORDER BY c.post_id) AS commented_post_ids,
     MIN(c.timestamp) AS first_comment_time,
     MAX(c.timestamp) AS last_comment_time,
     DATEDIFF(MAX(c.timestamp), MIN(c.timestamp)) + 1 AS comment_duration_days,
@@ -92,8 +89,6 @@ HAVING
     COUNT(DISTINCT c.post_id) > 5
     -- threshold for number of comments with same text
     AND COUNT(c.comment_id) > 5
-    -- threshold for average comments/day
-    AND COUNT(c.comment_id) / (DATEDIFF(MAX(c.timestamp), MIN(c.timestamp)) + 1) > 2
 ORDER BY 
     unique_posts_commented_on DESC, total_comments_made DESC, comment_duration_days ASC;
 
