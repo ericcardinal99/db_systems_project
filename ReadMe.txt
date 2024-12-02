@@ -10,4 +10,4 @@ Table Creation and Data Population
 9. Insert spam message data form SpamMessages.sql file: SOURCE C:\Users\PATH_TO_FOLDER\SpamMessages.sql
 10. Insert comment data from InsertComments.sql file: SOURCE C:\Users\PATH_TO_FOLDER\InsertComments.sql
 11. Insert spam comment data form SpamComments.sql file: SOURCE C:\Users\PATH_TO_FOLDER\SpamComments.sql
-10. Insert report data from InsertReports.sql file: SOURCE C:\Users\PATH_TO_FOLDER\InsertReports.sql
+12. Insert report data from InsertReports.sql file: SOURCE C:\Users\PATH_TO_FOLDER\InsertReports.sql
