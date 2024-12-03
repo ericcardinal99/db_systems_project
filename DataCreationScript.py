@@ -348,3 +348,31 @@ sql_file_path = "InsertReports.sql"
 with open(sql_file_path, "w") as file:
     file.write("-- SQL Statements to Populate Report Table\n")
     file.write("\n".join(report_sql_statements))
+
+# Function to generate tags on posts
+def generate_tags(num_users):
+    sql_statements = []
+    sql_statements.append(f"INSERT INTO tagged_users (post_id, user_id, timestamp) VALUES")
+    count = 1
+    for from_user_id in range(1, num_users + 1):
+        num_tags = random.randint(0, 3)
+        for _ in range(num_tags):
+            post_id = random.choice([i for i in range(1, num_posts)])
+            count+=1
+            random_date = datetime.datetime.now() - datetime.timedelta(days=random.randint(0, 2000))
+            sql = (f"({post_id}, {from_user_id}, '{random_date.strftime('%Y-%m-%d %H:%M:%S')}'),")
+            sql_statements.append(sql)
+
+    # Remove last comma
+    sql_statements[-1] = sql_statements[-1][0:len(sql_statements[-1])-1]
+
+    return sql_statements
+
+
+tags_sql_statements = generate_tags(200)
+
+# Write to an SQL file
+sql_file_path = "InsertTags.sql"
+with open(sql_file_path, "w") as file:
+    file.write("-- SQL Statements to Populate Tags Table\n")
+    file.write("\n".join(tags_sql_statements))
