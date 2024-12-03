@@ -1,5 +1,6 @@
 Table Creation and Data Population
 1. Start by sourcing the CreateTables.sql file to generate all the tables: SOURCE C:\Users\PATH_TO_FOLDER\CreateTables.sql
+2. Set up indices for the table from the TableIndices.sql file: SOURCE C:\Users\PATH_TO_FOLDER\TableIndices.sql
 2. Insert user data from the InsertUsers.sql file: SOURCE C:\Users\PATH_TO_FOLDER\InsertUsers.sql
 3. Set up connection triggers to update user follower and following values: SOURCE C:\Users\PATH_TO_FOLDER\ConnectionTriggers.sql
 4. Insert connection data from InsertConnections.sql file: SOURCE C:\Users\PATH_TO_FOLDER\InsertConnections.sql
