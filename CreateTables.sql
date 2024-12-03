@@ -1,3 +1,11 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS comment;
+DROP TABLE IF EXISTS message;
+DROP TABLE IF EXISTS report;
+DROP TABLE IF EXISTS connections;
+DROP TALBE IF EXISTS tagged_users;
+
 -- Table for Users
 CREATE TABLE user (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -62,4 +70,14 @@ CREATE TABLE connections (
     PRIMARY KEY (followed_id, follower_id),
     FOREIGN KEY (followed_id) REFERENCES user(user_id),
     FOREIGN KEY (follower_id) REFERENCES user(user_id)
+);
+
+-- Table for Tagged Users (in Posts)
+CREATE TABLE tagged_users (
+	post_id INT NOT NULL,
+	user_id INT NOT NULL,
+	timestamp DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (post_id, user_id),
+	FOREIGN KEY (post_id) REFERENCES post(post_id),
+	FOREIGN KEY (user_id) REFERENCES user(user_id)
 );
