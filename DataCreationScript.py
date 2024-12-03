@@ -213,7 +213,7 @@ def generate_spam_messages(num_users):
     spam_users = random.sample(range(1, 201), num_users)
     for from_user_id in spam_users:
         for _ in range(30):
-            to_user_id = random.choice([i for i in range(1, num_users + 1) if i != from_user_id])
+            to_user_id = random.choice([i for i in range(1, 201) if i != from_user_id])
             text = f'spam message from {from_user_id}'
             count+=1
             random_date = datetime.datetime.now() - datetime.timedelta(days=random.randint(0, 2000))
