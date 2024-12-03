@@ -12,3 +12,4 @@ Table Creation and Data Population
 10. Insert comment data from InsertComments.sql file: SOURCE C:\Users\PATH_TO_FOLDER\InsertComments.sql
 11. Insert spam comment data form SpamComments.sql file: SOURCE C:\Users\PATH_TO_FOLDER\SpamComments.sql
 12. Insert report data from InsertReports.sql file: SOURCE C:\Users\PATH_TO_FOLDER\InsertReports.sql
+13. Insert tagged_users data from InsertTags.sql file: SOURCE C:\Users\PATH_TO_FOLDER\InsertTags.sql
