@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS comment;
 DROP TABLE IF EXISTS message;
 DROP TABLE IF EXISTS report;
 DROP TABLE IF EXISTS connections;
-DROP TALBE IF EXISTS tagged_users;
+DROP TABLE IF EXISTS tagged_users;
 
 -- Table for Users
 CREATE TABLE user (
