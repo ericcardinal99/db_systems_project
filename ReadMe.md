@@ -2,7 +2,7 @@
 Fake accounts on social media platforms seem to be everywhere: offering free stuff in comments on posts, random messages to users, or attempting to impersonate an actual account. Most people on social media, if not all, have experienced these frustrating encounters. However, these accounts are often exposed as fake by their automated and repetitive behavior. 
 Understanding the behaviors of spam accounts is the first step, and as social media users we have identified trends we often see. Through our project, we then hoped to demonstrate how such fake accounts could be identified quickly and removed before anyone is harmed.
 
-The following steps shows the social media platfor database that we developed and how to set it up:
+The following steps shows the social media platform database that we developed and how to set it up:
 
 ### Table Creation and Data Population
 1. Start by sourcing the CreateTables.sql file to generate all the tables: SOURCE C:\Users\PATH_TO_FOLDER\CreateTables.sql
